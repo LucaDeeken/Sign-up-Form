@@ -51,21 +51,32 @@
     isolation: isolate;
   }
 
+
 /* own Css
 */
 
-body {
+@font-face {
+    font-family: 'abhaya_libreregular';
+    src: url('fonts/abhayalibre-regular-webfont.woff2') format('woff2'),
+         url('fonts/abhayalibre-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
+}
+
+
+body {
+    display: flex;
     background-color: black;
+    
 }
 
   .background {
 
     display: flex;
-    min-height: 945px;
     background-color: rgb(236, 223, 203);
-    margin-top: 30px;
-    margin-bottom: 30px;
+
+    margin-top: 2vw;
   }
 
   div {
@@ -73,14 +84,108 @@ body {
   }
   .textcontentbox {
     display: flex;
-    margin: 40px;
     flex-wrap: wrap;
+    font-family: "abhaya_libreregular";
+    font-size: calc(12px + 1vw);
+    padding-top: 30px;
   }
 
+  .textBoxTop {
+    display: flex;
+    font-size: calc(12px + 1vw);
+    max-width: 800px;
+    padding-left: 50px;
+
+  }
   img {
     flex-shrink: 0;
     min-height:945px;
     min-width:600px;
-    max-height:945px;
     max-width:600px;
+  }
+  
+.inputFields {
+    display: flex;
+    justify-content: center;
+}
+
+  .input, .firstName, .lastName{
+
+    display: flex;
+    font-size: 20px;
+    margin: 10px;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    flex-direction: column;
+  }
+
+  input {
+    border-radius: 5px;
+    margin-right: 30px;
+    width: 300px;
+    border: 2px solid rgb(165, 163, 163);
+  }
+
+  .inputFieldsLeft
+  {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: 300px;
+    width:100vw;
+    background-color: rgb(244, 234, 220);
+    align-content: flex-start;
+    padding-left: 50px;
+    box-shadow: 3px 6px 4px -4px rgba(0,0,0,0.46);
+
+  }
+
+  header {
+  display: block;
+  width: 100%;
+  align-content: center;
+  background-color: rgb(244, 234, 220);
+  padding-left: 50px;
+  max-height: 60px;
+  align-self: flex-end;
+  }
+
+  label {
+
+
+  }
+
+  .textcontentbox2 {
+    display: flex;
+    font-size: calc(12px + 1vw);
+    max-width: 800px;
+    padding-left: 50px;
+    padding-top: 30px;
+
+  }
+
+  .buttonContainer {
+    width: 100%;
+    display: block;
+  }
+
+  .btn {
+margin-left: 50px;
+margin-top: 30px;
+font-size: 20px;
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 10px;
+padding-bottom: 10px;
+-webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.32); 
+box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.32);
+border: 2px solid black;
+border-radius: 5px;;
+
+    
+  }
+
+  .btnAndText {
+    display: flex;
+    flex-wrap: wrap;
   }
