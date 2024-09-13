@@ -7,14 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 
 </head>
+
 <body>
     <div class="background">
-   
-    
         <div class="imagecontentbox">
             <img src="images/ship.jpg" alt="sailing vessel waiting at port">
             <div class="card-body">
-                <div class="test">
+                <div class="submarineContainer">
                     <img src="images/icon.png" id="submarine" alt="Icon of a submarine">
                 </div>
             </div>
@@ -22,14 +21,12 @@
         <div class="textcontentbox">
             <div class="textBoxTop" id="firstLine">Got too much money?!</div>
             <p class="textBoxTop"> Perfect! Dive into an adventure that only the boldest (and wealthiest) dare to embark on: a journey to the ocean's deepest depths in a luxurious submarine. No Wi-Fi, no meetings—just you and the endless silence of the deep sea!
-                <br><br>Ready to push your limits? Then dive in—your adventure awaits 200 meters beneath the surface!</p>
             <header>Register here:</header>
             <div class="InputFields">
-                <Form class="inputFieldsLeft" novalidate>
-                    
+                <form class="inputFieldsLeft" novalidate>
                     <div class="input firstName">
-                        <label for="text">*Firstname:</label>
-                        <input type="text" id="text" name="text" placeholder="John" required>
+                        <label for="firstName">*Firstname:</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="John" pattern="[A-Za-z]{1,32}" required>
                         <span></span>
                     </div>
                     <div class="input email">
@@ -39,38 +36,34 @@
                     </div>
                     <div class="input tel">
                         <label for="tel">Phone-Number:</label>
-                        <input type="tel" id="tel" name="tel" placeholder="0160 4815162342">
+                        <input type="tel" id="tel" name="tel" placeholder="0160 4815162342" pattern="\+?[0-9\s\-]{7,15}" >
                         <span></span>
 
                     </div>
                     <div class="input lastName">
-                        <label for="text">*Lastname:</label>
-                        <input type="text" id="text" name="text"placeholder="Doe" required>
+                        <label for="lastName">*Lastname:</label>
+                        <input type="text" id="lastName" name="lastName"placeholder="Doe" required pattern="[A-Za-z]{1,32}" required>
                         <span></span>
                     </div>
                     <div class="input password">
                         <label for="password">*Password:</label>
-                        <input type="password" id="password" name="password" placeholder="qwerty" required>
+                        <input type="password" id="password" name="password" placeholder="qwerty" required minlength="6">
                         <span></span>
                     </div>
                     <div class="input password">
-                        <label for="password">*Confirm Password:</label>
-                        <input type="password" id="password" name="password" placeholder="qwerty" required>
+                        <label for="confirmPassword">*Confirm Password:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="qwerty" required minlength="6">
                         <span></span>
                     </div>
-                    <div class="emptyBox"></div>
-                
-             
+                    <div class="emptyBox"></div> 
             </div>
             <div class="buttonContainer">
             <button type="submit" class="btn">Submit</button>
             </div>
         </Form>
-            <div class="textcontentbox2">Do you already have an account?<a href="">  Log In!</a></div>
-                
-        </div>
-               
+            <div class="textcontentbox2">Do you already have an account?<a href="">  Log In!</a></div>       
+        </div>        
     </div>
-    <script src="script.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>
