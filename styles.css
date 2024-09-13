@@ -259,7 +259,7 @@ input[type="tel"].untouched:invalid + span::after {
 input.untouched + span::before {
   position: absolute;
   right: 40px;
-  top: -30px;
+  top: -28px;
 }
 input.untouched:valid + span::before {
   content: "✓";
