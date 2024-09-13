@@ -236,11 +236,6 @@ input[type="email"].untouched:invalid, input[type="tel"].untouched:invalid, inpu
   border: 2px solid red;
 }
 
-input[type="password"] + span::after {
-
-  margin-bottom: 20px;
-}
-
 input[type="password"].untouched:invalid + span::after {
   font-size: 0.7rem;
   position: absolute;
@@ -278,7 +273,7 @@ input.untouched:invalid + span::before {
 
 .textcontentbox2 {
   display: flex;
-  font-size: calc(8px + 1vw);
+  font-size: calc(4px + 1vw);
   max-width: 800px;
   padding-left: 100px;
   font-weight: bold;
@@ -300,9 +295,9 @@ padding-right: 20px;
 padding-top: 15px;
 padding-bottom: 10px;
 -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.32); 
-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.32);
-border: 2px solid black;
-border-radius: 5px;
+box-shadow: 4px 4px 12px 4px rgba(0,0,0,0.32);
+border: 3px solid black;
+border-radius: 6px;
 cursor: pointer;
 transition: background-color 0.3s, color 0.3s;    
   }
