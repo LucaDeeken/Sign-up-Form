@@ -73,7 +73,7 @@ body {
     display: grid;
     height: 100%;
     grid-template-columns:1fr 3fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 0.8fr 4fr;
 
 }
 
@@ -84,7 +84,7 @@ body {
     grid-column: 2/4;
     grid-row: 1/2;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0.6fr 1fr;
     box-shadow: 3px 6px 4px -4px rgba(0,0,0,0.46);
 }
 
@@ -92,7 +92,7 @@ body {
 .upperHeader {
 
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr 1fr;
+    grid-template-columns: 5fr 0.4fr 0.4fr 1.1fr;
 }
 
 input {
@@ -104,15 +104,18 @@ input {
 
 }
 
+
 label {
     margin-left: 4rem;
     margin-right: 1.5rem;
     font-weight: 600;
 }
 
-.bell, .profilePic, .profileName {
+.bell, .profilePicture, .profileName {
 
     place-content: center;
+    margin-top: 0.8rem;
+
 }
 
 .lowHeader {
@@ -144,6 +147,8 @@ label {
 
     font-size: 0.9rem;
 }
+
+
 
 .discover {
 
@@ -187,6 +192,39 @@ label {
     cursor: pointer;
 }
 
+.new:hover, .discover:hover, .share:hover {
+    background-color: #e91111;
+}
+
+.bell {
+
+    height: 25px;
+    width: 25px;
+    align-self: center;
+    justify-content: left;
+    cursor: pointer;
+}
+
+.profilePicture {
+
+    min-height: 50px;
+    max-height: 50px;
+    min-width: 50px;
+    max-width: 50px;
+    border-radius: 50px;
+    align-self: center;
+    justify-content: left;
+    cursor: pointer;
+
+}
+
+.profileName {
+ 
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-right: 4.5rem;
+    width: max-content;
+}
 
 /* Sidebar */
 
@@ -198,7 +236,7 @@ label {
     grid-row: 1/3;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 4fr 5fr;
+    grid-template-rows: 1fr 3fr 1.8fr 4fr;
     gap: 50px;
     color: white;
     background-color: rgb(29, 29, 29);
@@ -206,10 +244,44 @@ label {
 }
 
 .dashboard {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
     grid-row: 1/2;
-    margin-top: 1rem;
-    margin-left: 4rem;
+    margin-top: 2rem;
+    margin-left: 2.5rem;
     font-size: 2rem;
+}
+
+#dashboardPicture {
+
+    min-height: 45px;
+    max-height: 45px;
+    min-height: 45px;
+    max-height: 45px;
+    grid-column: 1/2;
+}
+
+.dashBoardText {
+    grid-column: 2/3;;
+}
+
+.homeBox {
+    display: grid;
+    grid-template-columns: 0.25fr 2fr;
+
+}
+
+#sidebarIcons {
+    min-width: 25px;
+    max-height: 25px;
+    min-height: 25px;
+    max-height: 25px;
+}
+
+.sidebarText:hover {
+
+    cursor: pointer;
+    color:#ae0a0a;
 }
 
 .profilBox {
@@ -221,7 +293,7 @@ label {
 
 .settingsBox {
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     font-size: 1.3rem;
     margin-left: 4rem;
 }
@@ -255,7 +327,8 @@ label {
     grid-row: 1/2;
     grid-column: 1/2;
     grid-template-rows: 0.5fr 5fr;
-     
+
+    
 }
 .charttitle {
 
@@ -268,13 +341,16 @@ label {
 
     display: grid;
     grid-template-rows: 1fr 4fr;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
 }
 
 .booktitle {
 
     grid-row: 1/2;
     place-self: center;
-    font-weight: 800;
+    font-weight: 700;
 }
 .bookStats {
 
@@ -291,7 +367,6 @@ label {
     position: relative;
     border: 2px solid silver;
     color:rgb(128, 128, 128);
-    margin: 10px;
     border-radius: 10px;
     font-weight: 600;
     font-size: 18px;
@@ -305,8 +380,24 @@ label {
     box-shadow: 3px 6px 4px -4px rgba(0,0,0,0.20);
     display: grid;
     grid-template-rows: 1fr 3fr;
+    margin-bottom: 1rem;
 
 }
+
+.Content:hover {
+
+    color:#ae0a0a;
+    cursor: pointer;
+}
+
+.bookTitle, .bookSite {
+    justify-self: right;
+}
+
+.bookGenre, .bookAvgRating {
+    justify-self: left;
+}
+
 
 .Content {
 
@@ -355,7 +446,7 @@ label {
     padding: 1rem;
     background-color: #ffffff;
     box-shadow: 3px 6px 4px -4px rgba(0,0,0,0.20);
-    margin-right: 0.7rem;
+    margin-right: 1.5rem;
 
 }
 
@@ -364,16 +455,26 @@ label {
     border-top: 2px solid silver;
     font-size: 0.9rem;
     padding-top: 0.5rem;
+    cursor: pointer;
+
 }
 
 #newsContent {
     font-size: 0.9rem;
     padding-top: 0.5rem;
+    cursor: pointer;
+
 }
 
 #newsContent::first-line, .newsContent::first-line {
 
     font-weight: 800;
+}
+
+.newsContent:hover, #newsContent:hover  {
+
+    color: #ae0a0a;
+
 }
 
 /* Trending-Box */
@@ -396,9 +497,9 @@ label {
     background-color: #ffffff;
     box-shadow: 3px 6px 4px -4px rgba(0,0,0,0.20);
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    margin-right: 0.7rem;
-    margin-bottom: 0.7rem;
+    grid-template-rows: repeat(3, 0.7fr);
+    margin-right: 1.5rem;
+    margin-bottom: 1.8rem;
     align-items: center;
 }
 
@@ -407,6 +508,17 @@ label {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 0.7fr;
+    padding: 1rem;
+
+}
+
+.beauvoir {
+
+    padding-bottom: 2rem;
+}
+
+.kracht {
+    padding-top: 2rem;
 }
 
 .trendingContentIcon {
@@ -417,17 +529,24 @@ label {
     max-width: 60px;
     place-self: center;
     border-radius: 50px;
+    cursor: pointer;
+
 }
 
 .trendingContentText {
 justify-self: start;
 align-self: center;
 font-size: 0.9rem;
-
+cursor: pointer;
 }
+
+.trendingContentText:hover {
+  color:#ae0a0a;
+    }
 
 .trendingContentText::first-line {
     font-weight: 700;
+
 }
 
 
@@ -445,9 +564,9 @@ font-size: 0.9rem;
 .containerChart {
 
     display: grid;
-    width: 550px;
-    height: 330px;
-    padding: 15px;
+    width: 600px;
+    height: 380px;
+    padding: 30px;
     background-color: #ffffff;
     border: 2px solid silver;
     border-radius: 10px;
@@ -455,7 +574,6 @@ font-size: 0.9rem;
     grid-template-rows: repeat(12, 1fr);
     column-gap: 6px;
     place-self: center;
-    margin-bottom: 1rem;
     box-shadow: 3px 6px 4px -4px rgba(0,0,0,0.20);
 
 }
@@ -580,4 +698,9 @@ font-size: 0.9rem;
 .jan, .feb, .mar {
 
     padding-right: 4px;
+}
+
+.chartNov:hover, .chartDez:hover, .chartOct:hover, .chartSep:hover, .chartAug:hover, .chartJul:hover, .chartJun:hover, .chartMay:hover, .chartApr:hover, .chartMar:hover, .chartFeb:hover, .chartJan:hover {
+
+    background-color: #e91111;
 }
