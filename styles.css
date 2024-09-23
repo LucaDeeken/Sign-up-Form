@@ -1,12 +1,12 @@
 /*
-  CSS Reset (copyright Josh Comeau)
+  1. Use a more-intuitive box-sizing model.
 */
 *, *::before, *::after {
     box-sizing: border-box;
   }
   
   /*
-    1. Remove default margin
+    2. Remove default margin
   */
   * {
     margin: 0;
@@ -14,8 +14,8 @@
   
   /*
     Typographic tweaks!
-    2. Add accessible line-height
-    3. Improve text rendering
+    3. Add accessible line-height
+    4. Improve text rendering
   */
   body {
     line-height: 1.5;
@@ -23,7 +23,7 @@
   }
   
   /*
-    4. Improve media defaults
+    5. Improve media defaults
   */
   img, picture, video, canvas, svg {
     display: block;
@@ -31,295 +31,553 @@
   }
   
   /*
-    5. Remove built-in form typography styles
+    6. Remove built-in form typography styles
   */
   input, button, textarea, select {
     font: inherit;
   }
   
   /*
-    6. Avoid text overflows
+    7. Avoid text overflows
   */
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
   }
   
   /*
-    7. Create a root stacking context
+    8. Create a root stacking context
   */
   #root, #__next {
     isolation: isolate;
   }
 
 
-/* own Css
-*/
+/* Outer Layout! */
 
-@font-face {
-  font-family: 'poppinsregular';
-  src: url('fonts/poppins-regular-webfont.woff2') format('woff2'),
-       url('fonts/poppins-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+html {
 
-}
+height: 100%;
+width: 100%;
+font-family: "Roboto", sans-serif;
 
-* {
-    font-family:"poppinsregular", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
 
-    display: flex;
-    background-color: black;
-    justify-content: center;
-    
-}
+    background-color: #efecec;
+    height: 100%;
 
-.background {
-
-  display: flex;
-  background-color: rgb(249, 238, 222);
-  max-width: 1450px;;
-  border-radius: 10px;
-  margin-top: 2vw;
 }
+.outerLayout {
 
-div {
-  display: flex;
-}
-.textcontentbox {
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 30px;
-}
-#firstLine {
-  font-size: calc(20px + 1vw);
-  font-weight: 1000;
-  display: block;
-  width: 100%;
-  margin-bottom: -10px;
-
-} 
-.textBoxTop {
-  display: flex;
-  font-size: clamp(22px, 4px + 1vw, 24px);
-  max-width: 1000px;
-  max-height: 200px;
-  padding-left: 100px;    
-  margin-right: 40px;
+    display: grid;
+    height: 100%;
+    grid-template-columns:1fr 3fr;
+    grid-template-rows: 1fr 4fr;
 
 }
 
-.imagecontentbox {
-  position: relative;
-  min-height:800px;
-  min-width:600px;
-  max-width:600px;
+/* search and header part*/
+
+.header {
+    background-color: white;
+    grid-column: 2/4;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    box-shadow: 3px 6px 4px -4px rgba(0,0,0,0.46);
 }
 
 
-.touched {
-  border: 2px solid silver;
-}
-.card-body {
+.upperHeader {
 
-  position: absolute;
-  display: flex;
-  height: 150px;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  text-align: center;
-  top: 9rem;
-}
-.submarineContainer {
-
-height: 100%;
-width: 100%;
-position: relative;
-display: flex;
-justify-content: center;
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr;
 }
 
-#submarine {
-position: absolute;
-opacity: 1;
-height: 100%;
+input {
+    width: 25rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    background-color: #efecec;
+    min-width: 0;
 
-}
-
-.input{
-
-  display: flex;
-  font-size: 20px;
-  margin: 10px;
-  margin-bottom: 5px;
-  margin-top: 0px;
-  flex-wrap: wrap;
-  border-radius: 10px;
-  flex-direction: column;
-
-  }
-
-input:focus {
-  
-  box-shadow: 0 0 3pt 0.5pt #0034c3;
-  outline-width: 0px;
 }
 
 label {
-  font-size: 18px;
-
-}
-input {
-  border-radius: 5px;
-  margin-right: 30px;
-  width: 300px;
-  border: 2px solid rgb(165, 163, 163);
-  font-size: 18px;
+    margin-left: 4rem;
+    margin-right: 1.5rem;
+    font-weight: 600;
 }
 
-.inputFieldsLeft
-{
-  display: flex;
-  flex-wrap: wrap;
-  max-height: 400px;
-  width: 100%;
-  min-width: 800px;
-  background-color: rgb(251, 248, 243);
-  padding-left: 90px;
-  box-shadow: 3px 6px 4px -4px rgba(0,0,0,0.46);
-  font-size: 10px;
+.bell, .profilePic, .profileName {
+
+    place-content: center;
 }
 
-header {
-display: block;
-width: 100%;
-background-color: rgb(251, 248, 243);
-padding-left: 100px;
-max-height: 60px;
-align-self: flex-end;
-font-weight: 800;
-font-size: calc(10px + 1vw);
-padding-top: 10px;
-margin-top: -20px;
-padding-bottom: 10px;
+.lowHeader {
 
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 0.6fr 0.6fr 0.6fr;
 }
 
-input + span {
-  position: relative;
+.lowHeaderPicture {
+    min-height: 70px;
+    max-height: 70px;
+    min-width: 70px;
+    max-width: 70px;
+    align-self: center;
+    justify-self: right;
+    border-radius: 50px;
+    margin-right: 1rem;
 }
 
-input[type="text"].untouched:invalid + span::after {
-  font-size: 0.7rem;
-  position: absolute;
-  content: "* don't be shy - tell us your real name!";
-  color: red;
-  padding: 5px 10px;
-  top: -4px;
-  left: -8px;
+.doubleName {
+
+    display: grid;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.3rem;
 }
 
-input[type="email"].untouched:invalid + span::after {
-  font-size: 0.7rem;
-  position: absolute;
-  content: "* this E-Mail is missing an @!";
-  color: red;
-  padding: 5px 10px;
-  top: -4px;
-  left: -8px;
+.firstLine::first-line {
+
+    font-size: 0.9rem;
 }
 
-input[type="email"].untouched:valid, input[type="tel"].untouched:valid, input[type="text"].untouched:valid, input[type="password"].untouched:valid {
+.discover {
 
-  border: 2px solid green;
+    background-color: #ae0a0a;
+    color: white;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    place-self: center;
+    border-radius: 15px;
+    font-weight: 700;
+    justify-self: start;
+    cursor: pointer;
+}
+
+.new {
+
+    background-color: #ae0a0a;
+    color: white;
+    padding: 1.95rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    place-self: center;
+    border-radius: 15px;
+    font-weight: 700;
+    justify-self: start;
+    cursor: pointer;
+}
+
+.share {
+
+    background-color: #ae0a0a;
+    color: white;
+    padding: 1.65rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    place-self: center;
+    border-radius: 15px;
+    font-weight: 700;
+    justify-self: start;
+    cursor: pointer;
 }
 
 
-input[type="email"].untouched:invalid, input[type="tel"].untouched:invalid, input[type="text"].untouched:invalid, input[type="password"].untouched:invalid {
+/* Sidebar */
 
-  border: 2px solid red;
+
+.sidebar {
+
+    border: 3px solid silver;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr 5fr;
+    gap: 50px;
+    color: white;
+    background-color: rgb(29, 29, 29);
+    font-weight: 700;
 }
 
-input[type="password"].untouched:invalid + span::after {
-  font-size: 0.7rem;
-  position: absolute;
-  content: "* passwords require at least six digits!";
-  color: red;
-  padding: 5px 10px;
-  top: -4px;
-  left: -8px;
+.dashboard {
+    grid-row: 1/2;
+    margin-top: 1rem;
+    margin-left: 4rem;
+    font-size: 2rem;
 }
 
-input[type="tel"].untouched:invalid + span::after {
-  font-size: 0.7rem;
-  position: absolute;
-  content: "* this field only accepts numbers & atleast 7 digits!";
-  color: red;
-  padding: 5px 10px;
-  top: -4px;
-  left: -8px;
+.profilBox {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    font-size: 1.3rem;
+    margin-left: 4rem;
 }
 
-input.untouched + span::before {
-  position: absolute;
-  right: 40px;
-  top: -28px;
-}
-input.untouched:valid + span::before {
-  content: "✓";
-  color: green;
+.settingsBox {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    font-size: 1.3rem;
+    margin-left: 4rem;
 }
 
-input.untouched:invalid + span::before {
-  content: "✖";
-  color: red;
+
+
+/* Chart and MyBooks Part */
+
+.article {
+
+    display: grid;
+    border: 3px solid silver;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
 }
 
-.textcontentbox2 {
-  display: flex;
-  font-size: clamp(18px, 4px + 1vw, 20px);
-  max-width: 800px;
-  padding-left: 100px;
-  font-weight: bold;
-  margin-bottom: 100px;
+.toRead {
 
-}
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    grid-template-rows: 4fr 3fr;
+    grid-template-columns: 1fr;
 
-.buttonContainer {
-  width: 100%;
-  display: block;
-}
-
-.btn {
-margin-left: 100px;
-margin-top: 30px;
-font-size: 20px;
-padding-left: 20px;
-padding-right: 20px;
-padding-top: 15px;
-padding-bottom: 10px;
--webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.32); 
-box-shadow: 4px 4px 12px 4px rgba(0,0,0,0.32);
-border: 3px solid black;
-border-radius: 6px;
-cursor: pointer;
-transition: background-color 0.3s, color 0.3s;    
-  }
-
-.btn:hover {
-  background-color: #5376b6; /* Hintergrundfarbe beim Hover */
-  color: #ffffff; /* Textfarbe beim Hover */
 
 }
 
-.btnAndText {
-  display: flex;
-  flex-wrap: wrap;
+.chartBox {
+
+    display: grid;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    grid-template-rows: 0.5fr 5fr;
+     
+}
+.charttitle {
+
+    font-size: 1.5rem;
+    margin-top: 1rem;
+
 }
 
-.btn:active {
-  transform: scale(0.95); /* Button wird leicht verkleinert */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Schattierung wird reduziert */
+.currentlyReading {
+
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+}
+
+.booktitle {
+
+    grid-row: 1/2;
+    place-self: center;
+    font-weight: 800;
+}
+.bookStats {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-row: 2/3;
+    grid-column: 1/2;
+    text-align: center;
+}
+
+.book {
+
+    position: relative;
+    border: 2px solid silver;
+    color:rgb(128, 128, 128);
+    margin: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    width: 250px;
+    height: 115px;
+    place-self: center;
+    text-align: start;
+    padding-left: 15px;
+    padding-top: 10px;
+    background-color: white;
+    box-shadow: 3px 6px 4px -4px rgba(0,0,0,0.20);
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+
+}
+
+.Content {
+
+    margin-top: 0.5rem;
+    text-align: center;
+    color: black;
+    padding-right: 10px;
+}
+
+.news {
+
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+}
+
+
+
+/* News and Trending Part */
+
+.news {
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.announcments {
+    display: grid;
+    grid-template-rows: 0.5fr 5fr;
+}
+
+.newsTitle {
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    margin-left: 0.4rem;
+}
+
+.newsContentBox {
+
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    border: 2px solid silver;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 3px 6px 4px -4px rgba(0,0,0,0.20);
+    margin-right: 0.7rem;
+
+}
+
+.newsContent {
+
+    border-top: 2px solid silver;
+    font-size: 0.9rem;
+    padding-top: 0.5rem;
+}
+
+#newsContent {
+    font-size: 0.9rem;
+    padding-top: 0.5rem;
+}
+
+#newsContent::first-line, .newsContent::first-line {
+
+    font-weight: 800;
+}
+
+/* Trending-Box */
+
+.trending {
+    display: grid;
+    grid-template-rows: 0.5fr 5fr;
+}
+.trendingTitle {
+
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    margin-left: 0.4rem;
+}
+.trendingContentBox {
+
+    border: 2px solid silver;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 3px 6px 4px -4px rgba(0,0,0,0.20);
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    margin-right: 0.7rem;
+    margin-bottom: 0.7rem;
+    align-items: center;
+}
+
+.trendingContentCases {
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 0.7fr;
+}
+
+.trendingContentIcon {
+
+    min-height: 60px;
+    max-height: 60px;
+    min-width: 60px;
+    max-width: 60px;
+    place-self: center;
+    border-radius: 50px;
+}
+
+.trendingContentText {
+justify-self: start;
+align-self: center;
+font-size: 0.9rem;
+
+}
+
+.trendingContentText::first-line {
+    font-weight: 700;
+}
+
+
+
+/* For Chart-Container! */
+
+.chartBox {
+
+    grid-row: 1/2;
+    grid-column: 1/2;
+    text-align: center;
+    font-weight: 800;
+}
+
+.containerChart {
+
+    display: grid;
+    width: 550px;
+    height: 330px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 2px solid silver;
+    border-radius: 10px;
+    grid-template-columns: 0.5fr repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    column-gap: 6px;
+    place-self: center;
+    margin-bottom: 1rem;
+    box-shadow: 3px 6px 4px -4px rgba(0,0,0,0.20);
+
+}
+
+
+.months {
+
+    display: grid;
+    grid-row: 13/14;
+    grid-column: 1/14;
+    grid-template-columns: 0.5fr repeat(12, 1fr);
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    column-gap: 6px;
+    font-weight: bold;
+  
+    padding-right: 3px;
+
+
+}
+
+.chartNum {
+
+    display: grid;
+    grid-column: 1/2;
+    background-color: rgb(255, 255, 255);
+    grid-row: 1/13;
+    text-align: right;
+    font-weight: 800;
+    font-size: 0.8rem;
+    
+
+    
+}
+
+
+.chartJan {
+
+    border: 2px solid black;
+    grid-row: 7/13;
+    background-color: #ae0a0a;
+}
+
+.chartFeb {
+
+    border: 2px solid black;
+    grid-row: 11/13;
+    background-color: #ae0a0a;;
+}
+
+.chartMar {
+
+    border: 2px solid black;
+    grid-row: 2/13;
+    background-color: #ae0a0a;;
+}
+
+.chartApr {
+
+    border: 2px solid black;
+    grid-row: 12/13;
+    background-color: #ae0a0a;;
+}
+
+.chartMay {
+
+    border: 2px solid black;
+    grid-row: 5/13;
+    background-color: #ae0a0a;;
+}
+
+.chartJun {
+
+    border: 2px solid black;
+    grid-row: 4/13;
+    background-color: #ae0a0a;;
+}
+
+.chartJul {
+
+    border: 2px solid black;
+    grid-row: 2/13;
+    background-color: #ae0a0a;;
+}
+
+.chartAug {
+
+    border: 2px solid black;
+    grid-row: 10/13;
+    background-color: #ae0a0a;;
+}
+
+.chartSep {
+
+    border: 2px solid black;
+    grid-row: 9/13;
+    background-color: #ae0a0a;;
+}
+
+.chartOct {
+
+    border: 2px solid black;
+    grid-row: 7/13;
+    background-color: #ae0a0a;;
+}
+
+.chartNov {
+
+    border: 2px solid black;
+    grid-row: 3/13;
+    background-color: #ae0a0a;;
+}
+
+.chartDez {
+
+    border: 2px solid black;
+    grid-row: 11/13;
+    background-color: #ae0a0a;
+    margin-right: 3px;
+}
+
+.jan, .feb, .mar {
+
+    padding-right: 4px;
 }
