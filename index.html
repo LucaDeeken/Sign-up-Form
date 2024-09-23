@@ -1,69 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
 
-</head>
-
-<body>
-    <div class="background">
-        <div class="imagecontentbox">
-            <img src="images/ship.jpg" alt="sailing vessel waiting at port">
-            <div class="card-body">
-                <div class="submarineContainer">
-                    <img src="images/icon.png" id="submarine" alt="Icon of a submarine">
-                </div>
-            </div>
+    <div class="outerLayout">
+      <div class="header">
+        <div class="upperHeader">
+          <div class="seachfield">
+            <label for="searchField">Search:</label>
+            <input type="text" id="searchField" name="text">
+          </div>
+          <div class="bell">bell</div>
+          <div class="profilePic">IMG</div>
+          <div class="profileName">name</div>  
         </div>
-        <div class="textcontentbox">
-            <div class="textBoxTop" id="firstLine">Got too much money?!</div>
-            <p class="textBoxTop"> Perfect! Dive into an adventure that only the boldest (and wealthiest) dare to embark on: a journey to the ocean's deepest depths in a luxurious submarine. No Wi-Fi, no meetings—just you and the endless silence of the deep sea!
-            <header>Register here:</header>
-            <div class="InputFields">
-                <form class="inputFieldsLeft" novalidate>
-                    <div class="input firstName">
-                        <label for="firstName">*Firstname:</label>
-                        <input type="text" id="firstName" name="firstName" placeholder="John" pattern="[A-Za-z]{1,32}" required>
-                        <span></span>
-                    </div>
-                    <div class="input email">
-                        <label for="email">*E-Mail:</label>
-                        <input type="email" id="email" name="email" placeholder="JohnDoe@messageme.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-                        <span></span>
-                    </div>
-                    <div class="input tel">
-                        <label for="tel">Phone-Number:</label>
-                        <input type="tel" id="tel" name="tel" placeholder="0160 4815162342" pattern="\+?[0-9\s\-]{7,15}" >
-                        <span></span>
+        <div class="lowHeader">
+          <img src="images/guybrush.jpeg" alt="Guybrush Threepwood" class="lowHeaderPicture">
+          <div class="doubleName">
+            <div class="firstLine">Nice to see you, <br> Guybrush Threepwood! (@mightyPirate)</div>
+          </div>
+          <button class="discover">Discover</button>
+          <button class="new">New</button>
+          <button class="share">Share</button>
+        </div>
+      </div>
 
-                    </div>
-                    <div class="input lastName">
-                        <label for="lastName">*Lastname:</label>
-                        <input type="text" id="lastName" name="lastName"placeholder="Doe" required pattern="[A-Za-z]{1,32}" required>
-                        <span></span>
-                    </div>
-                    <div class="input password">
-                        <label for="password">*Password:</label>
-                        <input type="password" id="password" name="password" placeholder="qwerty" required minlength="6">
-                        <span></span>
-                    </div>
-                    <div class="input password">
-                        <label for="confirmPassword">*Confirm Password:</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="qwerty" required minlength="6">
-                        <span></span>
-                    </div>
-                    <div class="emptyBox"></div> 
+
+      <div class="sidebar">
+        <div class="dashboard">Dashboard</div>
+        <div class="profilBox">
+          <div class="home">Home</div>
+          <div class="profile">Profile</div>
+          <div class="myBooks">My Books</div>
+          <div class="messages">Messages</div>
+          <div class="communities">Communities</div>
+      </div>
+      <div class="settingsBox">
+        <div class="settings">Settings</div>
+        <div class="support">Support</div>
+        <div class="privacy">Privacy</div>
+      </div>
+      </div>
+
+      <div class="article">
+        <div class="toRead">
+          <div class="chartBox">
+            <div class="charttitle">
+              yearly statistic of read books
             </div>
-            <div class="buttonContainer">
-            <button type="submit" class="btn">Submit</button>
+          <div class="containerChart">
+            <div class="chartNum">
+              <div class="one">9 -</div>
+              <div class="two">8 -</div>
+              <div class="three">7 -</div>
+              <div class="four">6 -</div>
+              <div class="five">5 -</div>
+              <div class="six">4 -</div>
+              <div class="seven">3 -</div>
+              <div class="eight">2 -</div>
+              <div class="nine">1 -</div>
+                    </div>
+            <div class="chartJan"></div>
+            <div class="chartFeb"></div>
+            <div class="chartMar"></div>
+            <div class="chartApr"></div>
+            <div class="chartMay"></div>
+            <div class="chartJun"></div>
+            <div class="chartJul"></div>
+            <div class="chartAug"></div>
+            <div class="chartSep"></div>
+            <div class="chartOct"></div>
+            <div class="chartNov"></div>
+            <div class="chartDez"></div>
+            <div class="months">
+              <div class="placeholder"></div>
+              <div class="jan">Jan</div>
+              <div class="feb">Feb</div>
+              <div class="mar">Mar</div>
+              <div class="apr">Apr</div>
+              <div class="may">May</div>
+              <div class="jun">Jun</div>
+              <div class="jul">Jul</div>
+              <div class="aug">Aug</div>
+              <div class="sep">Sep</div>
+              <div class="oct">Oct</div>
+              <div class="nov">Nov</div>
+              <div class="dec">Dec</div>
             </div>
-        </Form>
-            <div class="textcontentbox2">Do you already have an account?<a href="">  Log In!</a></div>       
-        </div>        
+            </div>
+         
+        </div>
+        <div class="currentlyReading">
+          <div class="booktitle">Currently Reading</div>
+          <div class="bookStats">
+            <div class="book">
+              <div class="titleHeader">Title</div>
+              <div class="Content">Moby Dick</div>
+            </div>
+            <div class="book">
+              <div class="titleHeader">Author</div>
+              <div class="Content">Herman Melville</div>
+            </div>
+            <div class="book">
+              <div class="titleHeader">Genre</div>
+              <div class="Content">Abenteuer</div>
+            </div>
+            <div class="book">
+              <div class="titleHeader">Site:</div>
+              <div class="Content">465 / 918</div>
+            </div>
+            <div class="book">
+              <div class="titleHeader">Own Rating:</div>
+              <div class="Content">8.56 / 10</div>
+            </div>
+            <div class="book">
+              <div class="titleHeader">Average Rating:</div>
+              <div class="Content">8 / 10</div>
+            </div> 
+          </div>
+        </div>
+        </div>
+       <div class="news">
+          <div class="announcments">
+            <div class="newsTitle">News</div>
+            <div class="newsContentBox">
+              <div id="newsContent">"Whispers in the Wind" <br> This beautifully written historical fiction takes you back to 18th century Scotland, where love, betrayal, and destiny intertwine. </div>
+              <div class="newsContent">"The Edge of Tomorrow" <br> A thrilling sci-fi adventure that explores the boundaries of time, space, and human resilience.</div>
+              <div class="newsContent">"Beneath the Stars" <br> A tender and emotional romance that tells the story of two souls destined to find each other, despite the odds. </div>
+          </div>
+          </div>
+          <div class="trending">
+            <div class="trendingTitle">Trending</div>
+            <div class="trendingContentBox">
+              <div class="trendingContentCases">
+                <img src="images/kracht.jpeg" alt="Christian Kracht" class="trendingContentIcon">
+                <div class="trendingContentText">@kracht <br>writer of Faserland</div>
+              </div>
+              <div class="trendingContentCases">
+                <img src="images/thomasmann.jpg" alt="Thomas Mann" class="trendingContentIcon">
+                <div class="trendingContentText">@thomasmann <br>writer of Buddenbrooks</div>
+              </div>
+              <div class="trendingContentCases">
+                <img src="images/beauvoir.jpeg" alt="Simone de Beauvoir" class="trendingContentIcon">
+                <div class="trendingContentText">@deBeauvoir <br>writer of Le Deuxième Sexe</div>
+              </div>
+          </div>
+       </div>
+      </div>
+
     </div>
-<script src="script.js" defer></script>
-</body>
+
+
+
+
+
+
+  </body>
 </html>
