@@ -18,9 +18,9 @@
             <label for="searchField">Search:</label>
             <input type="text" id="searchField" name="text">
           </div>
-          <div class="bell">bell</div>
-          <div class="profilePic">IMG</div>
-          <div class="profileName">name</div>  
+          <img src="images/bell-ring.svg" alt="Glocken-Icon" class="bell">
+          <img src="images/guybrush.jpeg" alt="Guybrush Threepwood" class="profilePicture">
+          <div class="profileName">Guybrush Threepwood</div>  
         </div>
         <div class="lowHeader">
           <img src="images/guybrush.jpeg" alt="Guybrush Threepwood" class="lowHeaderPicture">
@@ -35,26 +35,54 @@
 
 
       <div class="sidebar">
-        <div class="dashboard">Dashboard</div>
+        <div class="dashboard">
+          <img src="images/library.svg" alt="dashboard icon which is a book" style="filter: invert(1);" id="dashboardPicture">
+          <div class="dashBoardText">Dashboard</div>
+        </div>
         <div class="profilBox">
-          <div class="home">Home</div>
-          <div class="profile">Profile</div>
-          <div class="myBooks">My Books</div>
-          <div class="messages">Messages</div>
-          <div class="communities">Communities</div>
+          <div class="homeBox">
+            <img src="images/home.svg" alt="Icon of a house" style="filter: invert(1);" id="sidebarIcons">
+            <div class="sidebarText">Home</div>
+        </div>
+        <div class="homeBox">
+          <img src="images/user.svg" alt="Icon of a user" style="filter: invert(1);" id="sidebarIcons">
+          <div class="sidebarText">Profile</div>
+      </div>
+      <div class="homeBox">
+        <img src="images/book.svg" alt="Icon of a book" style="filter: invert(1);" id="sidebarIcons">
+        <div class="sidebarText">My Books</div>
+      </div>
+      <div class="homeBox">
+        <img src="images/messages.svg" alt="Icon of a messagebox" style="filter: invert(1);" id="sidebarIcons">
+        <div class="sidebarText">My Messages</div>
+      </div>
+      <div class="homeBox">
+        <img src="images/users.svg" alt="Icon of a messagebox" style="filter: invert(1);" id="sidebarIcons">
+        <div class="sidebarText">My Communities</div>
+      </div>
+
       </div>
       <div class="settingsBox">
-        <div class="settings">Settings</div>
-        <div class="support">Support</div>
-        <div class="privacy">Privacy</div>
+        <div class="homeBox">
+          <img src="images/settings.svg" alt="Icon of a gearwheel" style="filter: invert(1);" id="sidebarIcons">
+          <div class="sidebarText">Setting</div>
+        </div>
+        <div class="homeBox">
+          <img src="images/support.svg" alt="Icon of a gearwheel" style="filter: invert(1);" id="sidebarIcons">
+          <div class="sidebarText">Support</div>
+        </div>
+        <div class="homeBox">
+          <img src="images/privacy.svg" alt="Icon of a gearwheel" style="filter: invert(1);" id="sidebarIcons">
+          <div class="sidebarText">Privacy</div>
+        </div>
       </div>
-      </div>
+    </div>
 
       <div class="article">
         <div class="toRead">
           <div class="chartBox">
             <div class="charttitle">
-              yearly statistic of read books
+              All Books Read This Year:
             </div>
           <div class="containerChart">
             <div class="chartNum">
@@ -99,30 +127,30 @@
          
         </div>
         <div class="currentlyReading">
-          <div class="booktitle">Currently Reading</div>
+          <div class="booktitle">Currently Reading:</div>
           <div class="bookStats">
-            <div class="book">
-              <div class="titleHeader">Title</div>
+            <div class="book bookTitle">
+              <div class="titleTitle">Title</div>
               <div class="Content">Moby Dick</div>
             </div>
-            <div class="book">
-              <div class="titleHeader">Author</div>
+            <div class="book bookAuthor">
+              <div class="authorTitle">Author</div>
               <div class="Content">Herman Melville</div>
             </div>
-            <div class="book">
-              <div class="titleHeader">Genre</div>
-              <div class="Content">Abenteuer</div>
+            <div class="book bookGenre">
+              <div class="genreTitle">Genre</div>
+              <div class="Content">Adventure</div>
             </div>
-            <div class="book">
-              <div class="titleHeader">Site:</div>
+            <div class="book bookSite">
+              <div class="sitesTitle">Site:</div>
               <div class="Content">465 / 918</div>
             </div>
-            <div class="book">
-              <div class="titleHeader">Own Rating:</div>
+            <div class="book bookOwnRating">
+              <div class="ownRatingTitle">Average Rating:</div>
               <div class="Content">8.56 / 10</div>
             </div>
-            <div class="book">
-              <div class="titleHeader">Average Rating:</div>
+            <div class="book bookAvgRating">
+              <div class="avgRatingTitle">Own Rating:</div>
               <div class="Content">8 / 10</div>
             </div> 
           </div>
@@ -140,7 +168,7 @@
           <div class="trending">
             <div class="trendingTitle">Trending</div>
             <div class="trendingContentBox">
-              <div class="trendingContentCases">
+              <div class="trendingContentCases kracht">
                 <img src="images/kracht.jpeg" alt="Christian Kracht" class="trendingContentIcon">
                 <div class="trendingContentText">@kracht <br>writer of Faserland</div>
               </div>
@@ -148,14 +176,13 @@
                 <img src="images/thomasmann.jpg" alt="Thomas Mann" class="trendingContentIcon">
                 <div class="trendingContentText">@thomasmann <br>writer of Buddenbrooks</div>
               </div>
-              <div class="trendingContentCases">
+              <div class="trendingContentCases beauvoir">
                 <img src="images/beauvoir.jpeg" alt="Simone de Beauvoir" class="trendingContentIcon">
                 <div class="trendingContentText">@deBeauvoir <br>writer of Le Deuxième Sexe</div>
               </div>
           </div>
        </div>
       </div>
-
     </div>
 
 
